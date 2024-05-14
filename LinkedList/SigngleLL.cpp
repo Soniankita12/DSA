@@ -108,6 +108,17 @@ void deleteNode(int pos, node *&head)
     }
 }
 
+void reverse(node *&head)
+{
+    node *prev =NULL;
+    node *current =head;
+    while(current!=NULL)
+    {
+        
+    }
+
+}
+
 int main()
 {
     node *seco = new node(10);
