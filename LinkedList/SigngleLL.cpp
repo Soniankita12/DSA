@@ -1,6 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 // creating linked list
+class Node {
+    public:
+    int data;
+    Node *next;
+};
 class node
 {
 public:
@@ -23,18 +28,28 @@ public:
     }
 };
 // insertion at head
-void insertAtHead(node *&Head, int d)
+void insertAtHead(node *&head,int d)
 {
-    node *temp = new node(d);
-    temp->next = Head;
-    Head = temp;
+    node *temp =new node(d);
+    temp->next =head;
+    head = temp;
 }
 
+void recprint(node *head)
+{
+    if(head==NULL)
+    {
+        cout << "\n";
+        return;
+    }
+    cout<<head->data<<" ";
+    recprint(head->next);
+}
 void print(node *&head)
 {
     node *temp = head;
 
-    while (temp != NULL)
+    while (temp)
     {
         cout << temp->data << " ";
 
@@ -136,6 +151,10 @@ int main()
     print(tail);
     print(seco);
     insertAtPosition(tail, seco, 6, 45);
+    cout<<"recprint ";
+    
+    recprint(seco);
+    cout << "seco" << endl;
     print(seco);
     deleteNode(6, seco);
     print(seco);

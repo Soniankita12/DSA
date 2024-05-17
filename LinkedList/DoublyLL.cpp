@@ -138,6 +138,32 @@ void deleteAtPos(node *&head, node *&tail, int pos)
 
     delete curr;
 }
+ void insertatp(node *&head , int p ,int data)
+ {
+    if(p==1)
+    {
+        node *temp= new node(data);
+        temp->next=head;
+        head->prev =temp;
+        head= temp;
+    }
+    int count = 1;
+    node *temp= head;
+    while(count< p)
+    {
+      temp=temp->next;
+    }
+    node *newnode = new node(data);
+    newnode->next = temp->next;
+    newnode->prev = temp;
+    temp->next->prev=newnode;
+    temp->next= newnode;
+    
+
+    
+
+ }
+
 int main()
 {
     node *node1 = new node(10);
@@ -157,4 +183,5 @@ int main()
     print(head);
     print(tail);
     cout << "length-: " << getLength(head) << endl;
+
 }

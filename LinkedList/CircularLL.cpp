@@ -54,6 +54,21 @@ void print(node *tail)
     } while (tail != temp);
 }
 
+void prints(node *start)
+{
+    node *temp =start;
+    if(temp!=NULL)
+    {
+        cout<<temp->data<<" ";
+        temp=temp->next;
+        while(temp!=start)
+        {
+            cout<<temp->data<<" ";
+            temp=temp->next;
+
+        }
+    }
+}
 // delete 
 void  deleteNode(node *&tail, int element)
 {
@@ -94,7 +109,10 @@ int main()
     print(tail);
     deleteNode(tail,5);
     print(tail);
-    deleteNode(tail, 3);
+    cout<<"\n"<<"prints: ";
+    
+    prints(tail);
+    cout << "\n"; deleteNode(tail, 3);
     print(tail);
     deleteNode(tail, 16);
     print(tail);
