@@ -9,26 +9,12 @@ int main()
     cin >> tc;
     while (tc--)
     {
-        string s;
-        cin>>s;
-        int n=s.size();
-        set<char>se;
-        for (int i=0;i<n;i++)
+        
+        int p1,p2,p3;
+        cin>>p1>>p2>>p3;
+        if(p1== p2 && p2 == p3 )
         {
-            se.insert(s[i]);
-        }
-        if(se.size()==1)
-        {
-            cout<<"NO"<<"\n";
-        }else{
-            cout<<"YES"<<"\n";
-            string a=s;
-            reverse(a.begin(),a.end());
-            if(a==s)
-            {
-                sort(a.begin(),a.end());
-            }
-            cout<<a<<"\n";
+          cout<<"-1"<<"\n";
         }
     }
 }

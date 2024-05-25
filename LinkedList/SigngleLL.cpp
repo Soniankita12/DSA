@@ -139,7 +139,7 @@ int main()
     node *seco = new node(10);
     node *tail = seco;
     node *head = seco;
-    // cout << seco->data << endl;
+    cout << seco->data << endl;
     print(seco);
     insertAtHead(seco, 19);
     print(seco);
